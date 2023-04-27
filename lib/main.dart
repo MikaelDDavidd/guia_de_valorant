@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:valorent_app/screens/agen_screen.dart';
-import 'package:valorent_app/screens/details_screen.dart';
+import 'utils/routes/routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
+  const MyApp({Key? key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Valorent App',
+      title: 'Valorant App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/details': (context) => DetailsScreen(),
-      },
+      initialRoute: Routes.agents,
+      routes: Routes.routes,
     );
   }
 }
