@@ -22,7 +22,7 @@ class Routes {
   static final routes = <String, WidgetBuilder>{
     home: (BuildContext context) => const HomePage(),
     splash: (BuildContext context) => const SplashScreen(),
-    agents: (BuildContext context) => const AgentsPage(),
+    agents: (BuildContext context) => AgentsScreen(),
     weapons: (BuildContext context) => const WeaponsPage(),
     maps: (BuildContext context) => const MapsPage(),
     skins: (BuildContext context) => const SkinsPage(),
