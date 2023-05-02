@@ -1,24 +1,27 @@
-import 'package:flutter/material.dart';
-import 'utils/routes/routes.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const MyApp());
+import 'package:valorant_guide/ui/my_app.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'di/components/service_locator.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setPreferredOrientations();
+  await setupLocator();
+  return runZonedGuarded(() async {
+    runApp(MyApp());
+  }, (error, stack) {
+    print(stack);
+    print(error);
+  });
 }
 
-class MyApp extends StatelessWidget {
-  // ignore: use_key_in_widget_constructors
-  const MyApp({Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Valorant App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: Routes.agents,
-      routes: Routes.routes,
-    );
-  }
+Future<void> setPreferredOrientations() {
+  return SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.landscapeLeft,
+  ]);
 }

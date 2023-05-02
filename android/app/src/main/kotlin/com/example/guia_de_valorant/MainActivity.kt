@@ -1,4 +1,4 @@
-package com.example.guia_de_valorant
+package com.kael.valorantguide
 
 import io.flutter.embedding.android.FlutterActivity
 

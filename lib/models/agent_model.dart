@@ -1,20 +1,21 @@
 class Agent {
   Agent({
     required this.status,
-    required this.data,
+    required this.agents,
   });
   late final int status;
-  late final List<AgentData> data;
+  late final List<AgentData> agents;
 
   Agent.fromJson(Map<String, dynamic> json) {
     status = json['status'];
-    data = List.from(json['data']).map((e) => AgentData.fromJson(e)).toList();
+    agents =
+        List.from(json['agents']).map((e) => AgentData.fromJson(e)).toList();
   }
 
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
     _data['status'] = status;
-    _data['data'] = data.map((e) => e.toJson()).toList();
+    _data['data'] = agents.map((e) => e.toJson()).toList();
     return _data;
   }
 }
