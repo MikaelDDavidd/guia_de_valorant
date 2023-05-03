@@ -2,18 +2,12 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:valorant_guide/constants/colors.dart';
-import 'package:valorant_guide/data/sharedpref/constants/preferences.dart';
 import 'package:valorant_guide/utils/routes/routes.dart';
-import 'package:valorant_guide/stores/language/language_store.dart';
 import 'package:valorant_guide/stores/post/post_store.dart';
-import 'package:valorant_guide/stores/theme/theme_store.dart';
-import 'package:valorant_guide/utils/locale/app_localization.dart';
 import 'package:valorant_guide/widgets/progress_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:material_dialog/material_dialog.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
